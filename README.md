@@ -1,5 +1,17 @@
 # Vite-Sass
 ![enter image description here](https://mlemwlkcej9o.i.optimole.com/cb:cSka.4f299/w:1200/h:627/q:mauto/f:best/https://martagonzalez.dev/wp-content/uploads/2023/01/proyecto-con-vite-vanillajs-y-sass-linkedin.jpg)
+# Why Vite?
+**[Vite](https://vitejs.dev/) is a fast and efficient development environment designed for web  and application projects.**
+
+Vite offers **quick startup times**, meaning faster compilation and reloading. It stands out for its **speed during development**. It is **compatible with various frameworks and libraries** (React, Vue, Vanilla JS) and supports languages like *TypeScript, JavaScript,* and preprocessors like *Sass*. Vite uses **fast and selective reloading,** refreshing only the modules that have been modified, this significantly **enhances performance during development**, particularly in large projects.
+
+ - With **minimal configuration to get started**, it makes **project setup easy.**
+ - It provides an interactive development experience with **real-time updates** and immediate **browser reloading.**
+ - It integrates **popular tools** like **ESLint** and **Prettier** for code linting and formatting.
+ - It allows organizing the project into independent components, **facilitating scalability.**
+
+In conclusion, Vite is a solid choice for web projects seeking a **fast, efficient, and flexible** development environment with a modern development experience and **innovative features** like selective reloading.
+
 # Development Components
 
 ## Autoprefixer
@@ -118,10 +130,10 @@ This rule emits warnings if it finds any `console.log()` statements in your code
    that ESLint will display a warning in the console if it detects the
    use of `console` statements, but it won't prevent the code from
    running.
+   
+  Make sure to configure your **.slintrc.json** according to your preferences.
 
-Make sure to configure your .slintrc.json according to your preferences.
-
-**.slintrc.json CONFIGURATION**
+** .slintrc.json CONFIGURATION**
 
     {
       "env": {
@@ -147,7 +159,8 @@ Make sure to configure your .slintrc.json according to your preferences.
 ## Stylelint:
 [Stylelint](https://stylelint.io/) is a CSS linting tool. It can help you maintain consistent and error-free CSS code.
 
-**WHAT IS LINTING**
+**WHAT IS LINTING?**
+
 Linting is a procces to find posibles errors, weaknesses and patterns in the source code of a program that can contribute to problems appearing at runtime. The tool that performs this test is called "linter" or "lint tool". This tools helps to maintain a solid code and identify possible problems befor execution.
 
 Some tasks that a linter perfoms during linting includes:
@@ -292,7 +305,9 @@ The `.gitignore` file is used in a Git repository to specify files and folders t
     *.njsproj
     *.sln
     *.sw?
+
 **LOGS**
+
 The term "logs" in the context of a `.gitignore` file generally refers to directories where log files are stored. Log files contain information about specific events that occur during the execution of a program or system. These events could include debugging messages, errors, advisories, or any relevant information for tracking problems and troubleshooting.
   
 The insertion of this entry in the `.gitignore` file helps prevent these log files from being accidentally added to version control and, therefore, the Git repository. This is useful for keeping the repository cleaner and avoiding unnecessary conflicts related to changes in log files.
@@ -325,16 +340,16 @@ These patterns are part of best practices when using Git and help keep the repos
 A solid and well-balanced configuration for web development, especially if you are using Vite as your development environment. Here are some reasons why this configuration is good.
 
 **1 Linting & Format:**
-Tienes ESLint para el linting de JavaScript/TypeScript, Prettier para el formateo automático del código y Stylelint para el linting de CSS/SCSS. Esto garantiza consistencia y calidad en el código.
+You have ESLint for  JavaScript/TypeScript linting, Prettier for autoformatic code formatting  and Stylelint for CSS/SCSS linting. This ensures sonsistency and quality in the code.
 
 **2 Git Hooks with Husky and lint-staged**
-La configuración de Husky y lint-staged garantiza que las verificaciones de linting y formateo se ejecuten automáticamente antes de cada confirmación, lo que ayuda a mantener un historial de confirmaciones limpio y consistente.
+The Husky and lint-staged configuration ensures that linting formatting and checks are automatically run before each commit, helping maintain a clean and consistent commit history.
 
 **3 Development Environment with Vite**
-Vite es una herramienta de desarrollo rápida y eficiente para proyectos web. Los scripts dev, build, y preview están configurados para trabajar con Vite, lo que facilita el desarrollo y la implementación de tu aplicación.
+Vite is a lightweight, fast, and efficient development tool for web proyects. The dev, build and preview scripts are configured to work perfectly with Vite, making development and deployment of your application easier.
 
 **4 Development Dependencies Management:**
-Las dependencias de desarrollo incluyen herramientas como Autoprefixer, Sass, ESLint, Prettier, Stylelint, y Vite. Estas herramientas son fundamentales para el desarrollo moderno de páginas web y proporcionan un conjunto sólido de herramientas para el desarrollo, el linting y el formateo.
+The development dependencies include tools such as Autoprefixer, Sass, ESLint, Prettier, Stylelint, and Vite. These tools are essential for modern web development and provide a robust set of tools for development, linting, and formatting.
 
 To sum up, this configuratios is comprehensive and porvides a solid development enviroment. If this configuration fullfills your necesities and development preferences, is a great choice for working on web porjects.  Also, it is easily extendable if you need to add or adjust tools in the future according to your specific requirements. 
 
