@@ -119,6 +119,8 @@ This rule emits warnings if it finds any `console.log()` statements in your code
    use of `console` statements, but it won't prevent the code from
    running.
 
+** Make sure to configure your .slintrc.json according to your preferences.
+
 ** .slintrc.json CONFIGURATION**
 
     {
