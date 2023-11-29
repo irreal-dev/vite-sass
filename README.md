@@ -1,94 +1,125 @@
 # Vite-Sass
 ![enter image description here](https://mlemwlkcej9o.i.optimole.com/cb:cSka.4f299/w:1200/h:627/q:mauto/f:best/https://martagonzalez.dev/wp-content/uploads/2023/01/proyecto-con-vite-vanillajs-y-sass-linkedin.jpg)
-# Componentes para el desarrollo
+# Development Components
 
 ## Autoprefixer
-Es una buena idea incluir autoprefixer para agregar automáticamente prefijos de navegador a tus estilos. Esto ayuda a garantizar una mayor compatibilidad entre navegadores.
 
- **Instalacion:**
-*npm install --save-dev autoprefixer*
+Including [autoprefixer](https://autoprefixer.github.io/) to add browser prefixes automatically to our styles is a good idea. This helps to guarantee better compatibility across browsers.
 
-Asegúrate de configurar tu archivo postcss.config.js para incluir autoprefixer.
-**CONFIGURACION**: Crea un archivo llamado ***postcss.config.js*** en la raíz de tu proyecto y agrégale el siguiente contenido:
+ **Installation:**
 
-    module.exports = {plugins: {autoprefixer: {}  },};
+    npm install --save-dev autoprefixer
+
+Make sure to configure your **postcss.config.js** file to include autoprefixer.
+**CONFIGURATION**: Create a file called **postcss.config.js** in the root of your project and add the folowing content:
+
+ 
+
+      module.exports = {
+      plugins: {
+        autoprefixer: {},
+      },
+    };
     
 ## Prettier
-Prettier es una herramienta de formateo de código que puede ayudar a mantener un estilo de código consistente en tu proyecto. Puedes configurarlo según tus preferencias y asegurarte de que tu código se vea limpio y bien formateado.
 
- **Instalacion:**
-*npm install --save-dev prettier*
+[Prettier](https://prettier.io/) is a code formatting tool that can help you maintain a consistent coding style in your project. You can configure it according to your preferences to ensure your code is clean and well-formatted.
 
-Además de instalarlo, es común crear un archivo de configuración ***.prettierrc*** para personalizar las reglas de formateo.
+ **Installation:**
 
-**EXPLICACION DE LOS COMANDOS DE PRETTIER EN .prettierrc**
+    npm install --save-dev prettier
 
-| CLAVE | DEFINICION |
+In addition to install it, it is usal to create a configuration file called ***.prettierrc*** to customize formatting rules.
+
+
+**EXPLANATION OF THE PRETTIER COMMANDS IN .prettierrc**
+
+| KEY | DEFINITION |
 |--|--|
-| "semi": false, | No añadir punto y coma al final de las sentencias |
-| "singleQuote": true, | Utilizar comillas simples en lugar de dobles |
-| "tabWidth": 2, |  Utilizar espacios en lugar de tabulaciones |
-| "useTabs": false, | Tamaño de la sangría con espacios |
-| "printWidth": 80, | Longitud máxima de la línea |
-| "endOfLine": "auto", |  Utilizar el formato de fin de línea del sistema operativo |
-| "trailingComma": "es5", |  Añadir coma al final de las listas si es posible (excepto en funciones) |
-| "arrowParens": "always" |   Añadir paréntesis alrededor de los parámetros de las funciones de flecha siempre |
+| "semi": false, | Do not add a period and comma at the end of the sentences |
+| "singleQuote": true, | Use single quotes instead of doble quotes |
+| "tabWidth": 2, |  Use spaces instead of tabs |
+| "useTabs": false, | Indentation size with spaces |
+| "printWidth": 80, | Maximun lenght of code line |
+| "endOfLine": "auto", |  Use the operating system's end-of-line format. |
+| "trailingComma": "es5", |  If possible, add a comma at the end of the lists (except for functions) |
+| "arrowParens": "always" |   Always add parentheses around the parameters of arrow functions |
 
-## Eslint:
-Eslint es útil para mantener la consistencia en tu código JavaScript. Puedes configurarlo para que funcione junto con prettier para garantizar un código limpio y bien formateado.
+## ESLint:
+[ESLint](https://eslint.org/) is useful for maintaining consistency in your JavaScript code. You can configure it to work in conjunction with Prettier to guarantee clean and well-formatted code.
 
- **Instalacion:**
-*npm install --save-dev eslint*
+ **Installation:**
+
+    npm install --save-dev eslint
+
 **Inicializar eslint:**
-*npx eslint --init*
 
-Al igual que con prettier, puedes configurar tu archivo de configuración .eslintrc para adaptarlo a tus necesidades. Esto te guiará a través de un proceso de configuración interactivo. Puedes elegir reglas recomendadas o configurarlas según tus necesidades.
+    npx eslint --init
+**INITIALIZATION QUIZ FOR PROJECT  SETUP**
+This appears when you execute  `npx eslint --init`. Refer to the oficial documentation for more info.
 
-**REGLAS COMUNES A CONSIDERAR EN EL ARCHIVO .eslintrc.json**
+    √ How would you like to use ESLint? · problems    
+    √ What type of modules does your project use? · esm
+    √ Which framework does your project use? · none
+    √ Does your project use TypeScript? · No / Yes
+    √ Where does your code run? · browser
+    √ What format do you want your config file to be in? · JSON
+   
+Just like with Prettier, you can configure your configuration file **.eslintrc** to adjust to your needs. This guide takes you through an interactive configuration process. Choose the recommended rules or configure them according to your requirements.
+ 
+**COMMONS RULES TO CONSIDER IN THE .eslintrc.json FILE**
 
-**1 reglas para la indentación**:
+**1 Indentation rule**:
 
     "indent": ["error", 2],
+This rule spicifies two-space indentation. Ensure that the code is easy to read and maintains consistency regard to indentation
+-   `"error"` indicates that it's a rule, and if not followed, it will result in an error.
+-   `2` specifies the desired level of indentation, in this case, 2 spaces.
 
-Esta regla especifica que la sangría (o indentación) debe ser de 2 espacios. Asegura que el código sea fácil de leer y consistente en cuanto a la sangría.
-
-**2 reglas para punto y coma:**
+**2 Semicolon rule:**
 
     "semi": ["error", "never"],
 
-Esta regla indica que no se deben usar punto y coma al final de las sentencias en JavaScript. Algunos desarrolladores prefieren esta convención.
+This rule indicates that semicolons should not be used at the end of statements in JavaScript. Some developers prefer this convention. If you prefer to use them, you just have to replace `"never"` with `"always"`.
 
-**3 reglas para comillas:**
+
+**3 Single quotes rule:**
 
     "quotes": ["error", "single"],
+This rule specifies that you should use single quotes instead of double quotes for text strings.
 
-Esta regla especifica que debes usar comillas simples en lugar de comillas dobles para las cadenas de texto.
-
-**4 reglas para espaciado después de palabras clave:**
+**4 Spacing rule after keywords:**
 
     "keyword-spacing": ["error", { "before": true, "after": true }],
+ 
+This rule ensures spacing before and after keywords in the code, improving readability.".
 
-Esta regla asegura que haya espacios antes y después de las palabras clave en el código, mejorando la legibilidad.
-
-**5 reglas para espaciado dentro de bloques:**
+**5 Spacing rules within blocks:**
 
     "block-spacing": ["error", "always"],
 
-Esta regla asegura que siempre haya espacios dentro de bloques de código, lo que también contribuye a la legibilidad del código.
+This rule ensures the existence of spaces within code blocks, contributing to code readability.
 
-**6 reglas para la longitud máxima de línea:**
+**6 Maximum line length rule:**
 
     "max-len": ["error", { "code": 80 }],
+This rule limits the maximum line code length to 80 characters. It helps maintain shorter code lines and promotes the readability.
 
-Esta regla limita la longitud de una línea de código a 80 caracteres. Ayuda a mantener líneas de código más cortas y fomenta la legibilidad.
-
-**7 reglas para el uso de console:**
+**7 Console use rule:**
 
     "no-console": "warn",
+This rule emits warnings if it finds any `console.log()` statements in your code. It can be useful to avoid oversights in production code with console declarations.
 
-Esta regla emite una advertencia (warn) si encuentras alguna declaración de console.log() en tu código. Puede ser útil para evitar olvidos de declaraciones de console en el código de producción.
+ - "no-console": "warn"` means that the use of `console` statements in
+   your code will generate a warning instead of an error during ESLint's
+   execution.
+ - In ESLint, configuration levels are generally `"off"` (off), `"warn"`
+   (warning), or `"error"` (error). In this case, `"warn"` indicates
+   that ESLint will display a warning in the console if it detects the
+   use of `console` statements, but it won't prevent the code from
+   running.
 
-**CONFIGURACION DEL .slintrc.json**
+** .slintrc.json CONFIGURATION**
 
     {
       "env": {
@@ -108,59 +139,61 @@ Esta regla emite una advertencia (warn) si encuentras alguna declaración de con
         "block-spacing": ["error", "always"],
         "max-len": ["error", { "code": 80 }],
         "no-console": "warn"
-        // Puedes agregar más reglas según tus preferencias
+        // You can add more rules acording to your requirements
       }
     }
 ## Stylelint:
-Stylelint es una herramienta de linting para CSS. Puede ayudarte a mantener un código CSS consistente y libre de errores.
+[Stylelint](https://stylelint.io/) is a CSS linting tool. It can help you maintain consistent and error-free CSS code.
 
-**QUE ES EL LINTING**
-El linting es el proceso de analizar el código fuente de un programa para encontrar posibles errores, inconsistencias y patrones que pueden conducir a problemas en tiempo de ejecución. La herramienta que realiza este análisis se llama "linter" o "lint tool". Estas herramientas ayudan a mantener un código más consistente y a identificar posibles problemas antes de que se ejecuten.
+**WHAT IS LINTING**
+Linting is a procces to find posibles errors, weaknesses and patterns in the source code of a program that can contribute to problems appearing at runtime. The tool that performs this test is called "linter" or "lint tool". This tools helps to maintain a solid code and identify possible problems befor execution.
 
-Algunas de las tareas que un linter realiza durante el linting incluyen:
+Some tasks that a linter perfoms during linting includes:
 
-**1 Verificación de Estilo de Código:**
-Un linter puede asegurarse de que el código sigue un estilo de codificación consistente. Esto incluye reglas sobre sangría, uso de comillas, punto y coma, etc.
+**1 Code style checking:**
+A linter can ensure that code follows a consistent code style. This includes indentation rules, the use of quotes, semicolons, etc.
 
-**2 Detección de Errores Comunes:**
-Los linters pueden identificar errores comunes, como variables no utilizadas, declaraciones duplicadas, o cualquier otro patrón que pueda conducir a problemas en tiempo de ejecución.
+**2 Detection of common errors:**
+Linters can identify common errors, such as unused variables, duplicate declarations, or any other patterns that may lead to runtime problems.
 
-**3 Mejoras de Seguridad:**
-Algunos linters también pueden advertir sobre prácticas inseguras, como el uso de funciones obsoletas o vulnerabilidades conocidas.
+**3 Security enhancements:**
+Some linters can provide advice on unsafe practices, such as the use of obsolete functions or known vulnerabilities.
 
-**4 Conformidad con Estándares:**
-Los equipos de desarrollo a menudo establecen estándares de codificación. Un linter puede asegurarse de que el código cumpla con estos estándares.
+**4 Consent to standards:**
+Development teams frequently set up coding satandards. A linter can ensure that the code stick to these standards.
 
-**5 Optimización del Código:**
-Algunos linters también pueden proporcionar sugerencias para optimizar el código, como eliminar código muerto o mejorar el rendimiento.
+**5 Code optimization:**
+Some linters can provide suggestions for code optimization, such as deleting dead code or improving eficiency
+Linting is an important pactice in software development because it helps us to maintain  clean, readable adn error-free code. Tools like ***ESLint para JavaScript, TSLint para TypeScript, y Stylelint para CSS*** are common examples of linters used in diferent development context.
 
-El linting es una práctica importante en el desarrollo de software porque ayuda a mantener un código más limpio, legible y libre de errores potenciales. Herramientas como ***ESLint para JavaScript, TSLint para TypeScript, y Stylelint para CSS*** son ejemplos comunes de linters utilizados en diferentes contextos de desarrollo.
+**Installation:**
 
-**Instalacion:**
-*npm install --save-dev stylelint stylelint-config-standard*
+    npm install --save-dev stylelint stylelint-config-standard
 
-Asegúrate de configurar tu archivo **.stylelintrc** según tus preferencias.
+Make sure to configure your **.stylelintrc** according to your preferences.
    
-**CONFIGURACION ARCHIVO .stylelintrc**
+**.stylelintrc FILE CONFIGURATION**
 
     {
       "extends": "stylelint-config-standard"
     }
-    
-Stylelint es especialmente útil cuando estás trabajando con CSS o preprocesadores como SCSS. Proporciona reglas y guías para el estilo de tu código CSS, y te ayuda a detectar errores, mantener consistencia y mejorar la legibilidad del código.
+Stylelint is especially useful when you work with CSS or preprocessors like SCSS. It provides rules and guidelines to stylize your CSS code, helping you detect errors, maintain consistency, and improve code readability.   
 
-Cuando trabajas con SCSS, stylelint puede ser configurado para analizar tanto archivos CSS como archivos SCSS. Esto es beneficioso porque SCSS introduce una sintaxis más rica y compleja, y stylelint te ayuda a mantener un código consistente y libre de errores, independientemente de si estás utilizando CSS puro o un preprocesador como SCSS.
+When you are working whit SCSS, stylelint can be configured to analize both CSS and SCSS files. This is useful because SCSS ntroduces a richer and more complex syntax. Stylint helps you to maintain consistency and error-free whether you are using pure CSS or preprocessors like SCSS.
 
-Si estás utilizando SCSS en tu proyecto Vite, te recomendaría incluir stylelint en tu configuración de desarrollo. Puedes configurarlo para que lintee tanto tus archivos CSS como tus archivos SCSS. Esto puede ayudar a evitar problemas y mejorar la calidad del código a medida que trabajas en tu proyecto.
-## 5 husky y lint-staged:
-Husky y lint-staged son herramientas que te permiten ejecutar scripts (como linters o formateadores de código) antes de confirmar tus cambios en Git, asegurando que tu código cumpla con ciertas reglas antes de enviarlo.
+If you are using SCSS in your Vite project, I recommend including stylelint in your development configuration. You can config it to lint both your CSS and SCSS files. This can help to avoid problems and improve code quality as you work on the project.  
 
- **Instalacion:**
-*npm install --save-dev husky lint-stagedt*
+## 5 husky & lint-staged:
 
-Configura estos en tu archivo package.json para ejecutar scripts específicos antes de cada confirmación.
+Husky and lint-staged are tools that allow you to run scripts (such as linters or code formatters) before committing your changes to Git, ensuring that your code complies with certain rules before sending it.
 
-## Configuración package.json y explicación:
+ **Installation:**
+
+    npm install --save-dev husky lint-stagedt
+
+Configure these in your package.json file to run specific scripts before each commit.
+
+##  package.json Configuration and Explanation:
 
     {
       "name": "vite-sass",
@@ -195,58 +228,112 @@ Configura estos en tu archivo package.json para ejecutar scripts específicos an
       },
 **1 Scripts:**
 
-Los scripts son comandos que puedes ejecutar utilizando npm o yarn. En tu caso, has definido varios scripts en la sección "scripts" de tu package.json. Algunos ejemplos son:
+The scripts are commands that you can run using npm or yarn. In my case, I have defined several scripts in the 'scripts' section of my package.json. Some examples are:"
 
-**- "dev": "vite" -->  es para el desarrollo local.**
-Este script inicia el servidor de desarrollo de Vite. Cuando ejecutas ***npm run dev***, Vite lanzará un servidor de desarrollo que te permitirá trabajar en tu aplicación en un entorno local. Este servidor de desarrollo proporciona recarga en caliente (hot module replacement) y otras características para una experiencia de desarrollo eficiente.
+**"dev": "vite" -->  It's for local development** 
+This script starts the Vite development server. When you run `npm run dev`, Vite will launch a development server that allows you to work on your application in a local environment. This development server provides ***hot module replacement*** and other features for an efficient development experience.
 
-**-"build": "vite build" -->  es para construir la aplicación para producción.**
-Este script construye tu aplicación Vite para producción. Cuando ejecutas ***npm run build***, Vite generará una versión optimizada y lista para producción de tu aplicación. Los archivos resultantes se colocarán generalmente en un directorio como dist o build, listos para ser desplegados en un servidor web.
+**"build": "vite build" -->  It's for building the application for production**
+This script builds your aplication Vite for production. When you execute `npm run buid`, Vite creates an optimized version anda production-ready bundle of your application. The resulting are generally placed in a directory called **"dist"** or **"build"**, ready to be deployed in a web server. 
 
-**-"preview": "vite preview" --> es para ver cómo se verá la aplicación construida en un entorno de producción local antes de desplegarla, es decir antes de npm run build.**
-Este script inicia un servidor de vista previa de producción para la aplicación construida. Es útil para revisar cómo se verá y se comportará tu aplicación en un entorno de producción local antes de implementarla en un servidor real. Puedes ejecutar ***npm run preview*** después de ejecutar ***npm run build***.
+**"preview": "vite preview" --> It's to see how the built application will look in a local production environment before deploying it, that is, before running** `npm run build`
+This script starts a production preview server for the built application. It's useful for reviewing how your application will look and behave in a local production environment before deploying it to a real server. You can run `npm run preview` after executing  `npm run build`.
 
-**-"lint":** Ejecuta ESLint para realizar linting y corrección automática.
+**"lint": --> Executes ESLint to perform linting and automatic correction.** `npm run lint` 
 
-**-"format":** Utiliza Prettier para formatear el código.
+**"format": --> Use Prettier to formant code.** `npm run format`
 
-**-"stylelint":** Ejecuta Stylelint para realizar linting y corrección automática en archivos CSS y SCSS.
+**-"stylelint": --> Run Stylelint to perform linting and automatic correction on CSS y SCSS  files.** `npm run stylelint`
 
-**-"precommit":** Un script que ejecuta lint-staged. Se usará como gancho previo a la confirmación (pre-commit).
+**-"precommit": --> A script that executes lint-staged. It will be used as a pre-commit hook.**  `npm run precommit`  In other words, it allows performing actions, such as running linters, before committing changes, which helps maintain code quality in the repository."
 
 **2 Husky:**
-
-Husky es una herramienta que te permite configurar ganchos de Git para ejecutar scripts en eventos específicos, como antes de confirmar (pre-commit). En tu caso, has configurado Husky para ejecutar ***npm run precommit*** antes de cada confirmación. Esto asegura que lint-staged se ejecute antes de cada commit.
+Husky is a tool that allows you to configure Git hooks to execute scripts in specific events, such as before committing, known as pre-commit. In this case Husky is configurates to be executed by `npm run precommit` before each commit. This ensures that lint-staged is executed before each commit
 
 **3 Lint-staged:**
 
-Lint-staged es una herramienta que te permite ejecutar scripts solo en los archivos que han sido modificados en el área de preparación de Git (staging area). En tu configuración de lint-staged, estan definidos dos conjuntos de acciones:
+Lint-staged is a tool that allows you to run scripts only on files that have been modified in the Git staging area. In your lint-staged configuration, there are two sets of actions defined.:
     
 
- - `*".{js,jsx,ts,tsx}": Para archivos JavaScript y TypeScript, ejecuta los scripts lint y format.`
+ - `*".{js,jsx,ts,tsx}": to files JavaScript y TypeScript, execute scripts lint y format.`
  - 
-       *".{css,scss}": Para archivos CSS y SCSS, ejecuta el script stylelint.
+       *".{css,scss}": to files CSS y SCSS, execute script stylelint.
+These scripts are executed only on files that are about to be commited. This allow to make specific actions to be performance in those files before they are saved in the repository.. In summary, this configuration ensures that before each commit, the modified filesgo throug a specific linting and formatting process for each type of file, ensuring consistency and quality in your repository code.
 
-Estos scripts se ejecutan solo en los archivos que están a punto de ser confirmados, lo que permite realizar acciones específicas en esos archivos antes de que se guarden en el repositorio.
-En resumen, esta configuración asegura que antes de cada confirmación, los archivos modificados pasen por un proceso de linting y formateo específico para cada tipo de archivo, lo que garantiza la consistencia y calidad del código en tu repositorio.
+
 ## Gitignore:
   
-El archivo `.gitignore` se utiliza en un repositorio de Git para especificar archivos y carpetas que deben ser ignorados por Git. Esto significa que estos archivos y carpetas no serán rastreados ni incluidos en el control de versiones del repositorio. Algunos de los patrones comunes que se encuentran en un archivo `.gitignore`, como los que has mostrado, son:
+The `.gitignore` file is used in a Git repository to specify files and folders that should be ignored by Git. This means that these files and folders will not be tracked or included in the version control of the repository. Some common patterns found in this Vite configuration in a `.gitignore` file, include:"
 
+    // Logs  
+    logs
+    *.log
+    npm-debug.log*
+    yarn-debug.log*
+    yarn-error.log*
+    pnpm-debug.log*
+    lerna-debug.log*
+	
+	.env      
+    node_modules
+    dist
+    dist-ssr
+    *.local
+    
+    // Editor directories and files
+    .vscode/*
+    !.vscode/extensions.json
+    .idea
+    .DS_Store
+    *.suo
+    *.ntvs*
+    *.njsproj
+    *.sln
+    *.sw?
+**LOGS**
+The term "logs" in the context of a `.gitignore` file generally refers to directories where log files are stored. Log files contain information about specific events that occur during the execution of a program or system. These events could include debugging messages, errors, advisories, or any relevant information for tracking problems and troubleshooting.
+  
+The insertion of this entry in the `.gitignore` file helps prevent these log files from being accidentally added to version control and, therefore, the Git repository. This is useful for keeping the repository cleaner and avoiding unnecessary conflicts related to changes in log files.
 
-## RESUMEN DE ESTA CONFIGURACION:
-Una configuración sólida y bien equilibrada para el desarrollo de páginas web, especialmente si estás utilizando Vite como tu entorno de desarrollo. Aquí hay algunas razones por las cuales esta configuración es buena:
+To sum up, log files are valuable for diagnosing issues during development operations, but they are typically ignored in version control `.gitignore` due to the *possibility of containing sensitive information*. This keeps the repository clean and avoids unnecessary conflicts when collaborating on a project.
 
-**1 Linting y Formateo:**
+ - **npm-debug.log*:** Este archivo de registro es generado por npm (Node Package Manager) durante la instalación de paquetes y puede contener información detallada sobre cualquier problema que ocurra
+   en la instalacion.
+
+ - **yarn-debug.log y yarn-error.log*:** Si estas utilizando Yarn que  también es un administrador de paquetes para JavaScript. Estos archivos de registro se generan durante las operaciones de instalación o ejecución, es similar al anterior.
+  
+ - **pnpm-debug.log*:** Similar a npm y Yarn,  pnpm es otro administrador de paquetes para JavaScript. Este archivo de registro.
+ 
+ - **lerna-debug.log*:** Lerna es una herramienta para administrar proyectos de monorepo (*práctica de almacenar múltiples proyectos o partes de un proyecto en un solo repositorio de control de versiones. En lugar de tener un repositorio separado para cada proyecto o componente, todos ellos se gestionan dentro de un único repositorio.*) en JavaScript. Este archivo de registro se genera durante operaciones con Lerna y contiene información dedepuración.
+ 
+ Depending on the package manager you use, you can configure this "log" configuration to your necessities.  For example, if you are using Node, you may not need to include anything related to Yarn and PnP, in the `.gitignore` file
+
+ - **.env :** They are commonly used to store environment variables that we don't want anyone to see due to they often contain sensitivecontent such as credentials, passwords, usernames, service configurations, etc.
+   
+ - **node_modules:** This line specifies that the `node_modules` folder, where project dependencies are usually stored, should be excluded from version control. Developers can reinstall them in any moment.    
+
+ - **dist y dist-ssr:** The folders named `dist` and `dist-ssr` should not be included in version control. These folders typically contain the final version of the source code and can be regenerated at any time. 
+
+ - ***.local**:  This pattern indicates that all files with the `.local` extension should not be included in version control. Files with this extension could be *local configuration files or temporary files* generated by development tools and *should not be shared among collaborators*.
+    
+These patterns are part of best practices when using Git and help keep the repository clean avoiding the inclusion of locally generated files and folders or generated during the build process.
+
+## SUMMARY OF THIS CONFIGURATION:
+
+A solid and well-balanced configuration for web development, especially if you are using Vite as your development environment. Here are some reasons why this configuration is good.
+
+**1 Linting & Format:**
 Tienes ESLint para el linting de JavaScript/TypeScript, Prettier para el formateo automático del código y Stylelint para el linting de CSS/SCSS. Esto garantiza consistencia y calidad en el código.
 
-**2 Ganchos de Git con Husky y lint-staged:**
+**2 Git Hooks with Husky and lint-staged**
 La configuración de Husky y lint-staged garantiza que las verificaciones de linting y formateo se ejecuten automáticamente antes de cada confirmación, lo que ayuda a mantener un historial de confirmaciones limpio y consistente.
 
-**3 Entorno de Desarrollo con Vite:**
+**3 Development Environment with Vite**
 Vite es una herramienta de desarrollo rápida y eficiente para proyectos web. Los scripts dev, build, y preview están configurados para trabajar con Vite, lo que facilita el desarrollo y la implementación de tu aplicación.
 
-**4 Gestión de Dependencias de Desarrollo:**
+**4 Development Dependencies Management:**
 Las dependencias de desarrollo incluyen herramientas como Autoprefixer, Sass, ESLint, Prettier, Stylelint, y Vite. Estas herramientas son fundamentales para el desarrollo moderno de páginas web y proporcionan un conjunto sólido de herramientas para el desarrollo, el linting y el formateo.
 
-En resumen, La configuración es completa y proporciona un entorno de desarrollo sólido. Si esta configuración satisface tus necesidades y preferencias de desarrollo, es una excelente elección para trabajar en proyectos web. Además, es fácilmente ampliable si en el futuro decides agregar o ajustar herramientas según tus requerimientos específicos.
+To sum up, this configuratios is comprehensive and porvides a solid development enviroment. If this configuration fullfills your necesities and development preferences, is a great choice for working on web porjects.  Also, it is easily extendable if you need to add or adjust tools in the future according to your specific requirements. 
+
+> Written with [StackEdit](https://stackedit.io/).
